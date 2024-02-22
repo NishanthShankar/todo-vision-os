@@ -13,30 +13,29 @@ struct TodoRow {
     var id: Int
     var text: String
     var isDone: Bool = false
-    
 }
 
 struct ContentView: View {
     @Environment(\.openWindow) private var openWindow
+    @Environment(TodoModel.self) private var todoMod
     @State var trial = ""
-    @State private var todos = [
-        TodoRow(id:0, text:"Get Groceries"),
-        TodoRow(id:1, text:"Go to work"),
-        TodoRow(id:2, text:"Get back from Work"),
-        ]
+//    @State private var todos = [
+//        TodoRow(id:0, text:"Get Groceries"),
+//        TodoRow(id:1, text:"Go to work"),
+//        TodoRow(id:2, text:"Get back from Work"),
+//        ]
     var body: some View {
         VStack {
             Text("Your List")
                 .font(.title)
                 .fontWeight(.bold)
 //            List {
-                ForEach(todos, id: \.id) { todo in
+            ForEach(todoMod.items.indices, id: \.self) { index in
+                let todo = todoMod.items[index]
                     HStack {
                         Button(action: {
-                            toggleCompletion(for:todo)
-                            print("CLICK", todo.id)
+                            todoMod.toggleCompleted(index:index)
                         }) {
-                            
                             if(todo.isDone) {
                                 Circle().foregroundColor(Color.red).frame(width: 14.0, height: 14.0).padding(14)
                             }
@@ -47,8 +46,7 @@ struct ContentView: View {
                         Text(todo.text)
                         Spacer()
                         Button(action: {
-                            openWindow(id:"reminder_box", value:todo.text)
-                            print("CLICKed", todo.id)
+                            openWindow(id:"reminder_box", value:index)
                         }) {
                             Text("OPEN")
                         }
@@ -61,14 +59,14 @@ struct ContentView: View {
         }.padding(36)
     }
     
-    func toggleCompletion(for todo: TodoRow) {
-            if let index = todos.firstIndex(where: { $0.id == todo.id }) {
-                todos[index].isDone.toggle()
-                
-            }
-        }
+//    func toggleCompletion(for todo: TodoRow) {
+//            if let index = todos.firstIndex(where: { $0.id == todo.id }) {
+//                todos[index].isDone.toggle()
+//                
+//            }
+//        }
 }
 
 #Preview(windowStyle: .automatic) {
-    ContentView()
+    ContentView().environment(TodoModel())
 }

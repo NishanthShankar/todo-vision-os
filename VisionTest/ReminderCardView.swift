@@ -8,12 +8,16 @@
 import SwiftUI
 
 struct ReminderCardView: View {
-    @State var color = Color.red
-    var text: String?
-    var colors = [Color.red, Color.blue, Color.green, Color.yellow]
     @Environment(\.dismissWindow) private var dismissWindow
+    @Environment(TodoModel.self) private var todoMod
+    @State var color = Color.red
+    
+    var text: String?
+    var index: Int?
+    var colors = [Color.red, Color.blue, Color.green, Color.yellow]
+    
+    
     var body: some View {
-        
         VStack {
             HStack {
                 Spacer()
@@ -23,11 +27,21 @@ struct ReminderCardView: View {
             }
             Spacer()
             HStack {
-                Text(text ?? "Enter TODO")
+                Text(todoMod.items[index ?? 0].text)
                 Spacer()
+                Button("Done") {
+                    todoMod.toggleCompleted(index: index ?? 0)
+                    
+                }
             }
         }.padding(36).background(color)
+            .onChange(of:todoMod.items[index ?? 0].isDone, perform: {
+                if($0) {
+                    dismissWindow()
+                }
+            })
     }
+        
 }
 
 #Preview {

@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		21849F902B85D613009DA087 /* ReminderCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21849F8F2B85D613009DA087 /* ReminderCardView.swift */; };
 		21849F942B85EB57009DA087 /* ColorButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21849F932B85EB57009DA087 /* ColorButton.swift */; };
+		21849F992B85F83A009DA087 /* TodoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21849F982B85F83A009DA087 /* TodoModel.swift */; };
+		21849F9B2B860D56009DA087 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21849F9A2B860D56009DA087 /* MainView.swift */; };
 		21AAB6572B70E13900EA5C4A /* RealityKitContent in Frameworks */ = {isa = PBXBuildFile; productRef = 21AAB6562B70E13900EA5C4A /* RealityKitContent */; };
 		21AAB6592B70E13900EA5C4A /* VisionTestApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21AAB6582B70E13900EA5C4A /* VisionTestApp.swift */; };
 		21AAB65B2B70E13900EA5C4A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21AAB65A2B70E13900EA5C4A /* ContentView.swift */; };
@@ -30,6 +32,8 @@
 /* Begin PBXFileReference section */
 		21849F8F2B85D613009DA087 /* ReminderCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderCardView.swift; sourceTree = "<group>"; };
 		21849F932B85EB57009DA087 /* ColorButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorButton.swift; sourceTree = "<group>"; };
+		21849F982B85F83A009DA087 /* TodoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoModel.swift; sourceTree = "<group>"; };
+		21849F9A2B860D56009DA087 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		21AAB6512B70E13900EA5C4A /* VisionTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VisionTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		21AAB6552B70E13900EA5C4A /* RealityKitContent */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = RealityKitContent; sourceTree = "<group>"; };
 		21AAB6582B70E13900EA5C4A /* VisionTestApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisionTestApp.swift; sourceTree = "<group>"; };
@@ -86,9 +90,11 @@
 				21849F932B85EB57009DA087 /* ColorButton.swift */,
 				21AAB65A2B70E13900EA5C4A /* ContentView.swift */,
 				21849F8F2B85D613009DA087 /* ReminderCardView.swift */,
+				21849F9A2B860D56009DA087 /* MainView.swift */,
 				21AAB65C2B70E13A00EA5C4A /* Assets.xcassets */,
 				21AAB6612B70E13A00EA5C4A /* Info.plist */,
 				21AAB65E2B70E13A00EA5C4A /* Preview Content */,
+				21849F982B85F83A009DA087 /* TodoModel.swift */,
 			);
 			path = VisionTest;
 			sourceTree = "<group>";
@@ -221,8 +227,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				21AAB65B2B70E13900EA5C4A /* ContentView.swift in Sources */,
+				21849F9B2B860D56009DA087 /* MainView.swift in Sources */,
 				21849F902B85D613009DA087 /* ReminderCardView.swift in Sources */,
 				21AAB6592B70E13900EA5C4A /* VisionTestApp.swift in Sources */,
+				21849F992B85F83A009DA087 /* TodoModel.swift in Sources */,
 				21849F942B85EB57009DA087 /* ColorButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
